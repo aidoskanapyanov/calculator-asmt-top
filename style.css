@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     color: rgb(200, 200, 200);
     font-family: 'Roboto', serif;
@@ -25,7 +29,7 @@ body {
 
 .display {
     height: 100px;
-    padding: 10px 10px;
+    padding: 10px;
 }
 
 .display-inner {
@@ -35,4 +39,13 @@ body {
 
 .buttons {
     height: 400px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+
+.grid-item {
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
 }
