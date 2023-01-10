@@ -1,8 +1,9 @@
 body {
+    color: rgb(200, 200, 200);
     font-family: 'Roboto', serif;
     background-color: #111827;
 }
 
-.footer {
-    color: rgb(200, 200, 200);
+.main {
+    height: 80vh;
 }
