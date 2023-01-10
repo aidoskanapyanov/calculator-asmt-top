@@ -24,9 +24,11 @@ body {
 }
 
 .display {
-    height: 20%;
+    height: 100px;
+    background-color: rgb(150, 150, 150);
 }
 
 .buttons {
-    height: 80%;
+    height: 400px;
+    background-color: rgb(200, 200, 200);
 }
