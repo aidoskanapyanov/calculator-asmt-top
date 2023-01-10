@@ -18,5 +18,13 @@ body {
 .calculator {
     height: 95%;
     width: 300px;
-    background-color: gray;
+    background-color: rgb(100, 100, 100);
+}
+
+.display {
+    height: 20%;
+}
+
+.buttons {
+    height: 80%;
 }
