@@ -4,7 +4,7 @@ let numbers = document.querySelectorAll(".num > button");
 let operators = document.querySelectorAll(".operator > button");
 let previouslyClicked = null;
 
-console.log(operators);
+let firstOperand = null;
 
 // clear display output
 let clearOutput = (e) => {
@@ -25,6 +25,7 @@ let typeNumber = (e) => {
   } else {
     output.innerHTML += e.target.innerHTML;
   }
+  firstOperand = output.innerHTML;
 };
 
 // Adding event listeners to buttons
