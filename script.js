@@ -2,13 +2,18 @@ let output = document.querySelector(".display-inner");
 let clearBtn = document.querySelector(".ac > button");
 let numbers = document.querySelectorAll(".num > button");
 
-console.log(numbers);
+let previouslyClicked = null;
 
 // clear display output
-let clearOutput = () => (output.innerText = 0);
+let clearOutput = (e) => {
+  previouslyClicked = e.target;
+  output.innerText = 0;
+};
 
 // type number to display
 let typeNumber = (e) => {
+  previouslyClicked = e.target;
+
   if (output.innerHTML.length == 8) {
     return;
   }
