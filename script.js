@@ -1,8 +1,10 @@
 let output = document.querySelector(".display-inner");
 let clearBtn = document.querySelector(".ac > button");
 let numbers = document.querySelectorAll(".num > button");
-
+let operators = document.querySelectorAll(".operator > button");
 let previouslyClicked = null;
+
+console.log(operators);
 
 // clear display output
 let clearOutput = (e) => {
@@ -26,8 +28,6 @@ let typeNumber = (e) => {
 };
 
 // Adding event listeners to buttons
-numbers.forEach((el) => {
-  el.addEventListener("click", typeNumber);
-});
+numbers.forEach((el) => el.addEventListener("click", typeNumber));
 
 clearBtn.addEventListener("click", clearOutput);
