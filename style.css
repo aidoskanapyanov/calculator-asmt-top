@@ -130,8 +130,9 @@ body {
 }
 
 .btn {
-    aspect-ratio: 1/1;
     height: 60px;
+    font-size: 20px;
+    aspect-ratio: 1/1;
     border-radius: 100%;
 }
 
