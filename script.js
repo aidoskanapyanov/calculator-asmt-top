@@ -9,6 +9,10 @@ let clearOutput = () => (output.innerText = 0);
 
 // type number to display
 let typeNumber = (e) => {
+  if (output.innerHTML.length == 8) {
+    return;
+  }
+
   if (output.innerHTML == 0) {
     output.innerHTML = e.target.innerHTML;
   } else {
