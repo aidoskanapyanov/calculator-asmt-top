@@ -1,10 +1,12 @@
 let output = document.querySelector(".display-inner");
 let clearBtn = document.querySelector(".ac > button");
+let operateBtn = document.querySelector(".equals > button");
 let numbers = document.querySelectorAll(".num > button");
 let operators = document.querySelectorAll(".operator > button");
 let previouslyClicked = null;
 
-let firstOperand = null;
+let operand = null;
+let operation = null;
 
 // clear display output
 let clearOutput = (e) => {
@@ -25,10 +27,28 @@ let typeNumber = (e) => {
   } else {
     output.innerHTML += e.target.innerHTML;
   }
-  firstOperand = output.innerHTML;
+
+  operand = output.innerHTML;
+};
+
+let makeOperation = (e) => {
+  if (operation) {
+    operate(e);
+    return;
+  }
+  operation = operand + e.target.innerText;
+  operand = null;
+  output.innerText = 0;
+};
+
+let operate = (e) => {
+  output.innerText = eval(operation + operand);
+  console.log(output.innerText);
+  operation = output.innerText + e.target.innerText;
 };
 
 // Adding event listeners to buttons
 numbers.forEach((el) => el.addEventListener("click", typeNumber));
-
+operators.forEach((el) => el.addEventListener("click", makeOperation));
+operateBtn.addEventListener("click", operate);
 clearBtn.addEventListener("click", clearOutput);
