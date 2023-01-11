@@ -140,3 +140,17 @@ body {
     border-radius: 500px;
     width: 100%;
 }
+
+.btn-dark {
+    color: white;
+    background-color: rgb(49, 49, 49);
+}
+
+.btn-light {
+    background-color: rgb(159, 159, 159);
+}
+
+.btn-yellow {
+    color: white;
+    background-color: rgb(246, 153, 6);
+}
