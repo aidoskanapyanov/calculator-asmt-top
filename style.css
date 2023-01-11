@@ -154,3 +154,10 @@ body {
     color: white;
     background-color: rgb(246, 153, 6);
 }
+
+.zero>button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 25px;
+}
