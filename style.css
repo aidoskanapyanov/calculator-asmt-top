@@ -50,8 +50,12 @@ body {
     text-align: center;
 }
 
+.btn {
+    font-size: 20px;
+}
+
 .btn-round {
     aspect-ratio: 1 / 1;
-    width: 100%;
+    width: 60px;
     border-radius: 100%;
 }
