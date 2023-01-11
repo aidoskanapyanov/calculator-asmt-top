@@ -29,12 +29,14 @@ body {
 
 .display {
     height: 100px;
-    padding: 10px;
+    padding: 50px 30px 0px 0px;
 }
 
 .display-inner {
     height: 100%;
     width: 100%;
+    font-size: 46px;
+    text-align: end;
 }
 
 .buttons {
