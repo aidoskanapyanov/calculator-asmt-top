@@ -4,7 +4,8 @@ let operateBtn = document.querySelector(".equals > button");
 let numbers = document.querySelectorAll(".num > button");
 let operators = document.querySelectorAll(".operator > button");
 
-let operand = null;
+let firstOperand = null;
+let secondOperand = null;
 let operation = null;
 
 // clear display output
@@ -38,9 +39,15 @@ let divide = (num1, num2) => {
   return num1 / num2;
 };
 
+let setFirstOperand = () => {
+  if (!firstOperand) {
+    firstOperand = output.innerText;
+  }
+};
+
 let chooseOperation = (e) => {
+  setFirstOperand();
   operation = e.target.innerText;
-  console.log(operation);
 };
 
 // Adding event listeners to buttons
