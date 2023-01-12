@@ -27,28 +27,21 @@ let typeNumber = (e) => {
   } else {
     output.innerHTML += e.target.innerHTML;
   }
-
-  operand = output.innerHTML;
 };
 
-let makeOperation = (e) => {
-  if (operation) {
-    operate(e);
-    return;
-  }
-  operation = operand + e.target.innerText;
-  operand = null;
-  output.innerText = 0;
+let add = (num1, num2) => {
+  return num1 + num2;
 };
-
-let operate = (e) => {
-  output.innerText = eval(operation + operand);
-  console.log(output.innerText);
-  operation = output.innerText + e.target.innerText;
+let subtract = (num1, num2) => {
+  return num1 - num2;
+};
+let multiply = (num1, num2) => {
+  return num1 * num2;
+};
+let divide = (num1, num2) => {
+  return num1 / num2;
 };
 
 // Adding event listeners to buttons
 numbers.forEach((el) => el.addEventListener("click", typeNumber));
-operators.forEach((el) => el.addEventListener("click", makeOperation));
-operateBtn.addEventListener("click", operate);
 clearBtn.addEventListener("click", clearOutput);
