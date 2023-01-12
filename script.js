@@ -38,6 +38,12 @@ let divide = (num1, num2) => {
   return num1 / num2;
 };
 
+let chooseOperation = (e) => {
+  operation = e.target.innerText;
+  console.log(operation);
+};
+
 // Adding event listeners to buttons
 numbers.forEach((el) => el.addEventListener("click", typeNumber));
+operators.forEach((el) => el.addEventListener("click", chooseOperation));
 clearBtn.addEventListener("click", clearOutput);
