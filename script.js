@@ -13,6 +13,13 @@ let clearOutput = () => {
   output.innerText = 0;
 };
 
+let resetCalculator = () => {
+  firstOperand = null;
+  secondOperand = null;
+  operation = null;
+  clearOutput();
+};
+
 // type number to display
 let typeNumber = (e) => {
   if (output.innerHTML.length == 8) {
@@ -81,5 +88,5 @@ let operate = () => {
 // Adding event listeners to buttons
 numbers.forEach((el) => el.addEventListener("click", typeNumber));
 operators.forEach((el) => el.addEventListener("click", chooseOperation));
-clearBtn.addEventListener("click", clearOutput);
+clearBtn.addEventListener("click", resetCalculator);
 operateBtn.addEventListener("click", operate);
