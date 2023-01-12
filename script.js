@@ -3,21 +3,17 @@ let clearBtn = document.querySelector(".ac > button");
 let operateBtn = document.querySelector(".equals > button");
 let numbers = document.querySelectorAll(".num > button");
 let operators = document.querySelectorAll(".operator > button");
-let previouslyClicked = null;
 
 let operand = null;
 let operation = null;
 
 // clear display output
 let clearOutput = (e) => {
-  previouslyClicked = e.target;
   output.innerText = 0;
 };
 
 // type number to display
 let typeNumber = (e) => {
-  previouslyClicked = e.target;
-
   if (output.innerHTML.length == 8) {
     return;
   }
