@@ -3,6 +3,7 @@ let clearBtn = document.querySelector(".ac > button");
 let operateBtn = document.querySelector(".equals > button");
 let numbers = document.querySelectorAll(".num > button");
 let operators = document.querySelectorAll(".operator > button");
+let signBtn = document.querySelector(".plus-minus");
 
 let firstOperand = null;
 let secondOperand = null;
@@ -44,14 +45,21 @@ let typeNumber = (e) => {
 let add = (num1, num2) => {
   return num1 + num2;
 };
+
 let subtract = (num1, num2) => {
   return num1 - num2;
 };
+
 let multiply = (num1, num2) => {
   return num1 * num2;
 };
+
 let divide = (num1, num2) => {
   return num1 / num2;
+};
+
+let switchSign = () => {
+  output.innerText = +output.innerText * -1;
 };
 
 let setFirstOperand = () => {
@@ -98,3 +106,4 @@ numbers.forEach((el) => el.addEventListener("click", typeNumber));
 operators.forEach((el) => el.addEventListener("click", chooseOperation));
 clearBtn.addEventListener("click", resetCalculator);
 operateBtn.addEventListener("click", operate);
+signBtn.addEventListener("click", switchSign);
