@@ -9,7 +9,7 @@ let secondOperand = null;
 let operation = null;
 
 // clear display output
-let clearOutput = (e) => {
+let clearOutput = () => {
   output.innerText = 0;
 };
 
@@ -41,16 +41,45 @@ let divide = (num1, num2) => {
 
 let setFirstOperand = () => {
   if (!firstOperand) {
-    firstOperand = output.innerText;
+    firstOperand = +output.innerText;
   }
 };
 
 let chooseOperation = (e) => {
   setFirstOperand();
+  clearOutput();
   operation = e.target.innerText;
+};
+
+let operate = () => {
+  if (!operation) {
+    return;
+  }
+  if (!firstOperand) {
+    return;
+  }
+  secondOperand = +output.innerText;
+
+  switch (operation) {
+    case "+":
+      output.innerText = add(firstOperand, secondOperand);
+      break;
+    case "-":
+      output.innerText = subtract(firstOperand, secondOperand);
+      break;
+    case "x":
+      output.innerText = multiply(firstOperand, secondOperand);
+      break;
+    case "÷":
+      output.innerText = divide(firstOperand, secondOperand);
+      break;
+  }
+  firstOperand = null;
+  setFirstOperand();
 };
 
 // Adding event listeners to buttons
 numbers.forEach((el) => el.addEventListener("click", typeNumber));
 operators.forEach((el) => el.addEventListener("click", chooseOperation));
 clearBtn.addEventListener("click", clearOutput);
+operateBtn.addEventListener("click", operate);
