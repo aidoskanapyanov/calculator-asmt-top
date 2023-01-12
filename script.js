@@ -26,9 +26,17 @@ let typeNumber = (e) => {
     return;
   }
 
-  if (output.innerHTML == 0) {
+  if (output.innerHTML == "0") {
+    if (e.target.innerText == ".") {
+      output.innerHTML = "0.";
+      return;
+    }
     output.innerHTML = e.target.innerHTML;
   } else {
+    if (e.target.innerText == "." && output.innerHTML.includes(".")) {
+      return;
+    }
+
     output.innerHTML += e.target.innerHTML;
   }
 };
