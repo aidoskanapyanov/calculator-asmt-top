@@ -4,6 +4,7 @@ let operateBtn = document.querySelector(".equals > button");
 let numbers = document.querySelectorAll(".num > button");
 let operators = document.querySelectorAll(".operator > button");
 let signBtn = document.querySelector(".plus-minus");
+let percentageBtn = document.querySelector(".percentage");
 
 let firstOperand = null;
 let secondOperand = null;
@@ -62,6 +63,10 @@ let switchSign = () => {
   output.innerText = +output.innerText * -1;
 };
 
+let makePercentage = () => {
+  output.innerText = +output.innerText / 100;
+};
+
 let setFirstOperand = () => {
   if (!firstOperand) {
     firstOperand = +output.innerText;
@@ -107,3 +112,4 @@ operators.forEach((el) => el.addEventListener("click", chooseOperation));
 clearBtn.addEventListener("click", resetCalculator);
 operateBtn.addEventListener("click", operate);
 signBtn.addEventListener("click", switchSign);
+percentageBtn.addEventListener("click", makePercentage);
